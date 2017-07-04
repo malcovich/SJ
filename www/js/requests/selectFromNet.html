@@ -1,0 +1,26 @@
+    <div class="modal-header">
+        <h3 class="modal-title select-contatcts-title" id="modal-title">Выбирете контакты</h3>
+    </div>
+    <div class="modal-body" id="modal-body">        
+      <div >
+     <!--  <uib-accordion>
+          <div uib-accordion-group class="panel-default" heading='te' ng-repeat=" item in vm.contacts">
+              <ul>
+                  <li ng-repeat="p in  item ">
+                      <input type="checkbox" ng-model="p.selected">
+                      <p>{{p.name}}</p>
+                  </li>
+              </ul>
+          </div>
+      </uib-accordion> -->
+          <div ng-repeat="item in $ctrl.allContatcts" class="item-selected">
+                  <input type="checkbox" ng-model="item.selected">
+                      <p>{{item.name}}<span class="item-selected-spec">{{item.spec}}</span></p>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.saveAnswer()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+    </div>
+
