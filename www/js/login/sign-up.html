@@ -1,19 +1,15 @@
 <ion-modal-view>
   <ion-content>
-	<form ng-submit="signup()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="newUser.email">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="newUser.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
-</ion-content>
+    <div class="signup">
+      <form ng-submit="signup()">
+        <h2>Регистрация</h2>
+        <input type="text" ng-model="newUser.email" placeholder="Email">
+        <input type="text" ng-model="newUser.name" placeholder="Имя Фамилия">
+        <input type="password" ng-model="newUser.password" placeholder="Password">
+        <input type="password" ng-model="newUser.confirmepassword" placeholder="Confirme password">
+        <button class="login-btn" type="submit">Log in</button>
+         <p class="create-user">У меня есть аккаунт? <span ui-sref="login">Войти</span></p>
+      </form>
+    </div>
+  </ion-content>
 </ion-modal-view>

@@ -34,16 +34,9 @@ angular.module('starter.controllers', [])
 
   // Form data for the login modal
   $scope.loginData = {};
-  console.log($state,$localStorage.token)
+
   if ($localStorage.token == undefined){
-    console.log('sdfsf')
-    $state.go('login')
-   /* $ionicModal.fromTemplateUrl('templates/auth.html', {
-      scope: $scope
-    }).then(function(modal) {
-      $scope.modal = modal;
-      $scope.modal.show();
-    });*/
+    $state.go('login');
   }else {
     $scope.token = $localStorage.token;
     AuthFactory.me().then(function(user){
@@ -65,22 +58,22 @@ angular.module('starter.controllers', [])
     );
   }
 
-  $ionicPlatform.ready(function() {
-     window.plugins.sim.getSimInfo(successCallback, errorCallback);
-      function successCallback(result) {
-        console.log(result);
-        $scope.phoneNumber = result.phoneNumber;
-      }
-      function errorCallback(error) {
-        console.log(error);
-      }
-      $scope.getAllContacts = function() {
-            $cordovaContacts.find({filter : 'me', fields:  [ 'displayName']}).then(function(allContacts) { //replace 'Robert' with '' if you want to return all contacts with .find()
-                $scope.contacts = allContacts;
-                console.log(JSON.stringify(allContacts));
-            });
-        };
-  })
+  // $ionicPlatform.ready(function() {
+  //    window.plugins.sim.getSimInfo(successCallback, errorCallback);
+  //     function successCallback(result) {
+  //       console.log(result);
+  //       $scope.phoneNumber = result.phoneNumber;
+  //     }
+  //     function errorCallback(error) {
+  //       console.log(error);
+  //     }
+  //     $scope.getAllContacts = function() {
+  //           $cordovaContacts.find({filter : 'me', fields:  [ 'displayName']}).then(function(allContacts) { //replace 'Robert' with '' if you want to return all contacts with .find()
+  //               $scope.contacts = allContacts;
+  //               console.log(JSON.stringify(allContacts));
+  //           });
+  //       };
+  // })
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {

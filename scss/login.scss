@@ -1,0 +1,167 @@
+.login {
+	height: 100vh;
+	background: #fff;
+	// background: url("../img/bg.jpg");
+	// background-size: 100% 100%;
+
+	.list {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 25px;
+	}
+	.item, .list {
+		background : transparent;
+		input {
+			border: 2px solid #CBCBCB;
+			border-radius: 2px;
+			height: 50px;
+			padding: 0 25px;
+			width: 100%;
+			margin-bottom: 10px;
+			&::placeholder {
+				text-align: center;
+				color:#BABFC8;
+			}
+		}
+		.create-user{
+			color: #848D9A;
+			font-size: 14px;
+			text-align: center;
+			span {
+				color:#4990E2;
+			}
+		}
+	}
+	.login-btn {
+		background: #3498DB;
+		border-radius: 2px;
+		height: 50px;
+		width: 100%;
+		border: none;
+		color: #fff;
+		margin-bottom: 43px;
+	}
+	.logo-block{
+		background: url("../img/logo.png") 53% 60% no-repeat;
+		width: 100%;
+		height :50vh;
+	}
+}
+.signup {
+	height: 100vh;
+	background: #fff;
+	padding: 25px;
+	h2 {
+		font-size:21px;
+		font-weight: normal;
+		text-transform : uppercase;
+		text-align: center;
+		color: #6D747F;
+		margin: 20px 0 30px 0;
+	}
+	input {
+			border-bottom: 1px solid #CBCBCB;
+			height: 50px;
+			width: 100%;
+			&::placeholder {
+				color:#BABFC8;
+			}
+		}
+
+	.login-btn {
+		background: #3498DB;
+		border-radius: 2px;
+		height: 50px;
+		width: 100%;
+		border: none;
+		color: #fff;
+		margin-bottom: 43px;
+		margin-top: 20px;
+	}
+	.create-user{
+			color: #848D9A;
+			font-size: 14px;
+			text-align: center;
+			span {
+				color:#4990E2;
+			}
+		}
+}
+
+.friendInApp{
+	background:#fff;
+	height: 100vh;
+	padding: 25px;
+
+	h4 {
+		color: #6D747F;
+		font-size: 18px;
+		font-weight: normal;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.skip {
+		color:#4990E2;
+		font-size: 14px;
+		text-align: center;
+		display: block;
+		padding: 20px 0;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+	}
+	.friendsList {
+		.friendItem {
+			overflow: hidden;
+			padding: 17px 0;
+			border-bottom: 1px solid #C7C7C7;
+			.friend-avatar {
+				float:left;
+				height: 75px;
+				width :75px;
+				border-radius: 50%;
+				border: none;
+				margin-right: 25px;
+				img {
+					width: 100%;
+				}
+			}
+			.add-to-friend{
+				float: right;
+				width: 40px;
+				text-align:center;
+				margin-top: 23px;
+				i{
+					font-size: 30px;
+					color:#4990E2;
+					&.red-color{
+						color: red;
+						font-size:20px;
+					}
+				}
+			}
+			.friend-info{
+				margin-right: 40px;
+				margin-left: 100px;
+				float: none;
+				h3 {
+					font-size: 18px;
+					font-weight: normal;
+					color:#666666;
+					line-height: 21px;
+					margin-top: 11px;
+					margin-bottom: 5px;
+
+				}
+				.friendPhone{
+					font-size: 14px;
+					color:#6D747F;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+

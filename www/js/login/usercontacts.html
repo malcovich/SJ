@@ -1,19 +1,23 @@
 <ion-modal-view>
   <ion-content>
-  <h4>Ваши друзья уже используют Profee</h4>
-   <div  ng-repeat="friend in resFriends"  class="friend-item">
-		<div style="float:right">
-			<span class="btn green-btn">Добавить</span>
-		</div>
-	   	<div class="friend-avatar">
-		  <img ng-src="http://172.18.2.117:5000/{{friend.img}}">
-	   	</div>
-		<div class="friend-info">
-		    <h3>
-		      {{friend.name || friend.email}}
-		    </h3>
-		</div>
+  	<div class="friendInApp">
+	  	<h4>Ваши знакомые уже используют Profee, добавьте их в друзья</h4>
+	  	<ul class="friendsList">
+	  		<li class="friendItem" ng-repeat="friend in resFriends">
+	  			<div class="add-to-friend">
+	  				<i class="icon ion-plus-round" ng-show="showAddButton(friend._id)" ng-click="addNewRequest(friend._id)"></i>
+	  				<i class="icon ion-close-circled red-color" ng-show="showDeletedButton(friend._id)" ng-click="deleteNewRequest(friend._id)"></i>
+	  			</div>
+	  			<div class="friend-avatar">
+				 	<img ng-src="http://192.168.1.107:5000/{{friend.img}}">
+			   	</div>
+			   	<div class="friend-info">
+				    <h3>{{friend.name || friend.email}}</h3>
+				    <p class="friendPhone">{{friend.phone}}</p>
+				</div>
+	  		</li>
+	  	</ul>
+		<span ui-sref="app.main" class="skip"> Пропустить</span>
 	</div>
-	<span ui-sref="app.main">Skip</span>
   </ion-content>
 </ion-modal-view>
