@@ -145,26 +145,6 @@ $dark:                            #444 !default;
         color: #6D747F;
         margin-bottom: 0; }
 
-.friend-item {
-  padding: 3.75vw;
-  border-bottom: 2px solid #f3f3f3;
-  overflow: hidden; }
-  .friend-item .friend-avatar {
-    float: left;
-    width: 16vw;
-    height: 16vw;
-    overflow: hidden;
-    margin-right: 4vw;
-    border-radius: 50%; }
-    .friend-item .friend-avatar img {
-      max-width: 100%; }
-  .friend-item .friend-info {
-    float: left;
-    width: 71vw; }
-    .friend-item .friend-info h3 {
-      line-height: 16vw;
-      margin-bottom: 0; }
-
 .contact-block {
   padding: 3.75vw; }
   .contact-block .img-block {
@@ -315,8 +295,35 @@ $dark:                            #444 !default;
     float: left;
     width: 71vw; }
     .contact-card .card-title h3 {
-      line-height: 16vw;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-size: 19px;
+      color: #808B9C; }
+
+.friend-item {
+  padding: 17px 25px;
+  border-bottom: 2px solid #f3f3f3;
+  overflow: hidden; }
+  .friend-item .friend-avatar {
+    float: left;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    margin-right: 25px;
+    border-radius: 50%; }
+    .friend-item .friend-avatar img {
+      max-width: 100%; }
+  .friend-item .friend-info {
+    float: left; }
+    .friend-item .friend-info h3 {
+      font-size: 19px;
+      line-height: 24.5px;
+      margin-bottom: 2px;
+      color: #808B9C;
+      font-weight: normal; }
+    .friend-item .friend-info .friend-phone {
+      font-size: 12px;
+      color: #97A3B8;
+      line-height: 14.5px; }
 
 body {
   font-family: 'Roboto', sans-serif; }
@@ -326,6 +333,9 @@ body {
   background-color: #454553 !important;
   color: #fff;
   border: none; }
+
+.bar.bar-stable .title {
+  color: #fff !important; }
 
 .platform-android .bar .title {
   font-size: 3.7vw;
@@ -339,7 +349,7 @@ body {
   line-height: 11vw; }
 
 .has-header {
-  top: 80px; }
+  top: 40px; }
 
 .bar-stable .button.button-clear {
   color: #fff; }
@@ -378,7 +388,7 @@ body {
   top: 150px; }
 
 .has-header {
-  top: 70px; }
+  top: 40px; }
 
 .user-avatar {
   width: 100px;
@@ -397,12 +407,22 @@ body {
   font-size: 18px; }
 
 .inner-profile {
-  padding: 3.75vw;
+  padding: 25px 0;
   overflow: hidden; }
-  .inner-profile label {
-    color: #8c8c99;
-    font-weight: 300;
-    font-size: 2.5vw; }
+  .inner-profile .field-title {
+    float: left;
+    color: #919191;
+    font-size: 17px; }
+  .inner-profile .user-field {
+    float: right;
+    color: #919191;
+    font-size: 17px; }
+  .inner-profile .field-row {
+    padding: 22px 16px;
+    overflow: hidden;
+    border-bottom: 1px solid #E6E9ED; }
+    .inner-profile .field-row:first-child {
+      border-top: 1px solid #E6E9ED; }
 
 .my-request {
   padding: 3.75vw;

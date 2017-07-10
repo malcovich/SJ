@@ -1,27 +1,4 @@
-.friend-item{
-	padding: 3.75vw;
-	border-bottom: 2px solid #f3f3f3;
-	overflow:hidden;
-	.friend-avatar {
-		float:left;
-		width: 16vw;
-		height: 16vw;
-		overflow: hidden;
-		margin-right: 4vw;
-		border-radius: 50%;
-		img {
-			max-width: 100%;
-		}
-	}
-	.friend-info{
-		float: left;
-		width:71vw;
-		h3 {
-			line-height: 16vw;
-			margin-bottom: 0;
-		}
-	}
-}
+
 .contact-block{
 	padding: 3.75vw;
 	.img-block{

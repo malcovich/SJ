@@ -7,6 +7,9 @@ body {
 	color: #fff;
 	border:none;
 }
+ .bar.bar-stable .title {
+ 	color: #fff !important;
+ }
 
 .platform-android .bar .title {
 	font-size: 3.7vw;
@@ -21,7 +24,7 @@ body {
 
 } 
 .has-header {
-	top: 80px;
+	top: 40px;
 }
 .bar-stable .button.button-clear{
 	color: #fff;
@@ -61,7 +64,7 @@ body {
 	top: 150px;
 }
 .has-header {
-	top: 70px;
+	top: 40px;
 }
 .user-avatar {
 	width: 100px;

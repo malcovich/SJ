@@ -18,8 +18,42 @@
 		float: left;
 		width:71vw;
 		h3 {
-			line-height: 16vw;
 			margin-bottom: 0;
+			font-size: 19px;
+			color: #808B9C;
+		}
+	}
+}
+
+.friend-item{
+	padding: 17px 25px;
+	border-bottom: 2px solid #f3f3f3;
+	overflow:hidden;
+	.friend-avatar {
+		float:left;
+		width: 75px;
+		height: 75px;
+		overflow: hidden;
+		margin-right: 25px;;
+		border-radius: 50%;
+		img {
+			max-width: 100%;
+		}
+	}
+	.friend-info{
+		float: left;
+		h3 {
+			font-size: 19px;
+			line-height: 24.5px;
+			margin-bottom: 2px;
+			color: #808B9C;
+			font-weight: normal;
+
+		}
+		.friend-phone {
+			font-size: 12px;
+			color: #97A3B8;
+			line-height: 14.5px;
 		}
 	}
 }

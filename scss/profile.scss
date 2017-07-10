@@ -1,9 +1,22 @@
 .inner-profile{
-	padding: 3.75vw;
+	padding: 25px 0;
 	overflow: hidden;
-	label {
-		color: #8c8c99;
-		font-weight: 300;
-		font-size: 2.5vw;
+	.field-title{
+		float: left;
+		color: #919191;
+		font-size: 17px;
+	}
+	.user-field {
+		float: right;
+		color: #919191;
+		font-size: 17px;
+	}
+	.field-row {
+		padding : 22px 16px;
+		overflow: hidden;
+		border-bottom: 1px solid #E6E9ED;
+		&:first-child {
+			border-top: 1px solid #E6E9ED;
+		}
 	}
 }

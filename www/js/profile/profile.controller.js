@@ -1,7 +1,8 @@
 angular.module('starter')
-  .controller('ProfileCtrl', ['$scope', '$log', 'AuthFactory', '$http','$state',function($scope, $log, AuthFactory, $http, $state){
+  .controller('ProfileCtrl', ['$scope', '$log', 'AuthFactory', '$http','$state', 'baseUrl',function($scope, $log, AuthFactory, $http, $state, baseUrl){
   	var $ctrl = this;
-
+    $ctrl.baseUrl = baseUrl;
+    console.log(baseUrl)
     AuthFactory.me().then(function(res){
       $ctrl.user = res.data.data;
       $ctrl.copyUser = angular.copy($ctrl.user);

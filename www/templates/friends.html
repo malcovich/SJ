@@ -3,12 +3,13 @@
 	<div class="inner-block">
 	    <div  ng-repeat="friend in $ctrl.friendsList" ui-sref="app.friend({id : friend._id})" class="friend-item">
 	   	<div class="friend-avatar">
-		  <img ng-src="http://172.18.2.117:5000/{{friend.img}}">
+		  <img ng-src="{{$ctrl.baseUrl}}/{{friend.img}}">
 	   	</div>
 		  <div class="friend-info">
 		    <h3>
 		      {{friend.name || friend.email}}
 		    </h3>
+		    <p class="friend-phone">{{friend.phone}}</p>
 		  </div>
 		</div>
 	</div>
