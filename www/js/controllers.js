@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
       $scope.user = user.data.data;
     })
   }
-
+/*
   $scope.pickContact = function() {
     ContactsService.pickContact().then(
         function(contact) {
@@ -56,7 +56,7 @@ angular.module('starter.controllers', [])
             console.log("Bummer.  Failed to pick a contact", failure);
         }
     );
-  }
+  }*/
 
   // $ionicPlatform.ready(function() {
   //    window.plugins.sim.getSimInfo(successCallback, errorCallback);

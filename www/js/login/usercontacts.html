@@ -9,7 +9,7 @@
 	  				<i class="icon ion-close-circled red-color" ng-show="showDeletedButton(friend._id)" ng-click="deleteNewRequest(friend._id)"></i>
 	  			</div>
 	  			<div class="friend-avatar">
-				 	<img ng-src="http://192.168.1.107:5000/{{friend.img}}">
+				 	<img ng-src="{{baseUrl}}/{{friend.img}}">
 			   	</div>
 			   	<div class="friend-info">
 				    <h3>{{friend.name || friend.email}}</h3>
