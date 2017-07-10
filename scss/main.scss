@@ -1,0 +1,81 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.bar.bar-stable{
+	height: 11vw;
+	background-color: #454553 !important;
+	color: #fff;
+	border:none;
+}
+
+.platform-android .bar .title {
+	font-size: 3.7vw;
+	line-height:  11vw;
+	color: #fff;
+	text-align: center;
+	font-weight: normal;
+}
+.bar-stable .button.button-icon {
+	color: #fff;
+	line-height:  11vw;
+
+} 
+.has-header {
+	top: 11vw;
+}
+.bar-stable .button.button-clear{
+	color: #fff;
+}
+
+.menu {
+	background-color: #222c3c;
+}
+.list, .item.item-complex .item-content {
+	background-color: #454553 !important;	color:#ffffff;
+}
+.menu .list{
+	padding-top: 16px;
+}
+.item {
+	border-width: 0px;
+}
+
+.menu.menu-left{
+		background-color: #454553 !important;
+}
+.menu .bar.bar-stable {
+	height: 150px;
+	background-color: #454553;
+	color:#ffffff;
+	border-color: #313d4f
+}
+.menu .bar.bar-stable .title {
+	color: #299df5;
+	height: 149px;
+}
+.platform-android .menu .bar .title {
+	font-size: 21px;
+	line-height: 49px;
+}
+.menu .has-header {
+	top: 150px;
+}
+.has-header {
+	top: 70px;
+}
+.user-avatar {
+	width: 100px;
+	margin: 5px 88px 10px 88px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color:  #fff;
+}
+.user-avatar img {
+	width: 100%;
+}
+.user-name {
+	text-align:center;
+	color: #fff;
+	font-size: 18px;
+}

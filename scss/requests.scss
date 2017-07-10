@@ -1,0 +1,168 @@
+.my-request{
+	padding: 3.75vw;
+	border-bottom: 2px solid #f3f3f3;
+	overflow:hidden;
+	.block-img {
+		float: left;
+		border-radius: 50%;
+		overflow: hidden;
+		width: 16vw;
+		height: 16vw;
+		margin-right: 3.75vw;
+		img {
+			width: 100%;	
+		}
+	}
+	.request-body {
+		float:left;
+		width: 72vw;
+		.request-body-header {
+			overflow: hidden;
+			padding-bottom: 1.5vw;
+			.request-autor {
+				float:left;
+				font-size: 3vw;
+				font-weight: 500;
+				color: #288fda;
+				display: inline-block;
+			}
+			.request-date {
+				float:right;
+			}
+			
+		}
+		.request-text{
+			font-size: 3.5vw;
+			font-weight: 500;
+			color:#292a46;
+		}
+	}
+}
+.tabs-striped .tabs {
+	height: 15.7vw;
+	padding-top:0;
+}
+.tabs-striped .tab-item {
+	max-width: 50%;
+	margin-top: 0;
+	text-transform: uppercase;
+	border: none;
+	font-size: 4.2vw;
+	line-height: 15.7vw;
+}
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+	background: #49a0d5;
+	color:#fff;
+	margin-top: 0;
+	text-transform: uppercase;
+	border: none;
+	font-size: 4.2vw;
+	line-height: 15.7vw;
+}
+.request-block{
+	padding: 5.5vw;
+	.request-text {
+		font-size: 4.2vw;
+		color: #2d2735;
+		line-height: 6vw;
+		margin-bottom: 4vw;
+		font-weight: 500;
+	}
+	.request-header{
+		overflow: hidden;
+		.req-user-img{
+			width: 10vw;
+			height: 10vw;
+			border-radius: 50%;
+			overflow: hidden;
+			float: left;
+			margin-right: 2vw;
+			img{
+				max-width: 100%
+			}
+		}
+		.request-autor-name{
+			float: left;
+			line-height: 10vw;
+			font-weight: normal;
+			margin: 0;
+			color: #49a0d5;
+			font-size: 3.5vw;
+		}
+		.request-date{
+			float: right;
+			line-height: 10vw;
+		}
+	}
+	.request-buttons-block{
+		padding: 4vw 0;
+		overflow: hidden;
+		.delete-btn{
+			display: block;
+			padding: 2vw 5vw;
+			float: right;
+			border: 1px solid #d6dcdf;
+			border-radius: 2vw;
+		}
+		.edit-btn{
+			display: block;
+			padding: 2vw 5vw;
+			float: left;
+			border: 1px solid #d6dcdf;
+			border-radius: 2vw;
+		}
+	}
+	.request-body {
+		border-top: 2px solid #f3f3f3;
+		padding-top: 4vw;
+		.req-answer-autor {
+			font-size: 3vw;
+			margin-bottom: 0;
+			font-weight: normal;
+			span{
+				font-size: 3vw;
+				font-weight: normal;
+				margin: 0;
+				color: #49a0d5;
+			}
+		}
+		.contact-name , .contact-spec {
+			float: left;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 3.5vw;
+		}
+		.contact-spec{
+			margin-left: 2vw;
+		}
+		.card-title{
+			overflow: hidden;
+			background: #fbfaff;
+			margin-bottom: 2vw;
+		}
+		.header-cart {
+			.image-block {
+				float:left;
+				width: 7.5vw;
+				height: 7.5vw;
+				overflow: hidden;
+				border-radius: 50%;
+				img {
+					max-width: 100%
+				}
+			}
+		}
+		.answer-autor{
+			overflow: hidden;
+		}
+		.answer-list {
+			li {
+				background: #fbfaff;
+				padding: 3vw;
+				border: 2px solid #f3f3f3;
+				margin-bottom: 3vw;
+			}
+		}
+	}
+
+}

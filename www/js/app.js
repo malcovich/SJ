@@ -23,8 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ngStorage', 'ngCordov
 })
 
 /*.constant('baseUrl', "https://salty-hamlet-53492.herokuapp.com")*/
-// .constant('baseUrl', "http://172.18.2.117:5000")
-.constant('baseUrl', "http://192.168.1.107:5000")
+.constant('baseUrl', "http://172.18.2.117:5000")
+/*.constant('baseUrl', "http://192.168.1.107:5000")*/
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider, $ionicConfigProvider) {
   $stateProvider
