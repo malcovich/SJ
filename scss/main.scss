@@ -2,7 +2,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 .bar.bar-stable{
-	height: 11vw;
+	height: 53px;
 	background-color: #454553 !important;
 	color: #fff;
 	border:none;
@@ -10,6 +10,14 @@ body {
  .bar.bar-stable .title {
  	color: #fff !important;
  }
+ .bar .title {
+	font-size: 18px;
+	line-height: 53px;
+	height: 53px;
+	color: #fff;
+	text-align: center;
+	font-weight: normal;
+}
 
 .platform-android .bar .title {
 	font-size: 18px;

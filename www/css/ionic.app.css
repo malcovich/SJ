@@ -203,6 +203,89 @@ $dark:                            #444 !default;
       color: #6D747F;
       margin-bottom: 0; }
 
+.contact-page .img-block {
+  height: 30vh;
+  width: 100%; }
+  .contact-page .img-block img {
+    width: 100%; }
+
+.contact-page .info-block {
+  padding: 31px 25px 0 25px; }
+  .contact-page .info-block h3 {
+    color: #3498DB;
+    font-size: 26px;
+    text-align: center; }
+  .contact-page .info-block .contact-spec {
+    font-size: 14px;
+    line-height: 17px;
+    color: #6E747F;
+    text-align: center; }
+  .contact-page .info-block .addToContact {
+    height: 44px;
+    width: 185px;
+    border: 2px solid #3498DB;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    color: #3498DB;
+    margin-top: 28px;
+    margin-bottom: 35px; }
+
+.tab-block .tab-header {
+  overflow: hidden;
+  border-top: 1px solid #A2A2A2;
+  border-bottom: 1px solid #A2A2A2; }
+  .tab-block .tab-header .item-header {
+    float: left;
+    width: 50%;
+    color: #A2A2A2;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
+    text-transform: uppercase; }
+    .tab-block .tab-header .item-header.active {
+      color: #3498DB; }
+
+.tab-block .tab-pane .field-row {
+  padding: 8px 16px;
+  overflow: hidden; }
+
+.tab-block .tab-pane .field-title {
+  float: left;
+  color: #919191;
+  font-size: 14px; }
+
+.tab-block .tab-pane .user-field {
+  float: right;
+  color: #919191;
+  font-size: 14px; }
+
+.tab-block .tab-pane .comment-block {
+  padding: 5px 25px; }
+  .tab-block .tab-pane .comment-block .comment-header {
+    overflow: hidden; }
+  .tab-block .tab-pane .comment-block .comment-autor-img {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left; }
+    .tab-block .tab-pane .comment-block .comment-autor-img img {
+      width: 100%; }
+  .tab-block .tab-pane .comment-block .comment-autor-name {
+    float: left;
+    line-height: 35px;
+    color: #3498DB; }
+  .tab-block .tab-pane .comment-block .comment-date {
+    float: right;
+    line-height: 35px;
+    font-size: 14px;
+    color: #A2A2A2; }
+
 .contact-block {
   padding: 3.75vw; }
   .contact-block .img-block {
@@ -387,13 +470,21 @@ body {
   font-family: 'Roboto', sans-serif; }
 
 .bar.bar-stable {
-  height: 11vw;
+  height: 53px;
   background-color: #454553 !important;
   color: #fff;
   border: none; }
 
 .bar.bar-stable .title {
   color: #fff !important; }
+
+.bar .title {
+  font-size: 18px;
+  line-height: 53px;
+  height: 53px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal; }
 
 .platform-android .bar .title {
   font-size: 18px;

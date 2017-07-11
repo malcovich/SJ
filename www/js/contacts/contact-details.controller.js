@@ -1,12 +1,17 @@
 angular.module('starter')
-  .controller('ContactDetailsController', ['$scope', '$http', '$stateParams', '$log','AuthFactory', function($scope, $http, $stateParams, $log, AuthFactory){
+  .controller('ContactDetailsController', ['$scope', '$http', '$stateParams', '$log','AuthFactory', 'baseUrl',function($scope, $http, $stateParams, $log, AuthFactory,baseUrl){
 	var $ctrl = this;
-    var baseUrl = "https://salty-hamlet-53492.herokuapp.com";
+    $ctrl.baseUrl = baseUrl;
+    $ctrl.activeTab = 'More';
+
 	AuthFactory.me().then(function(res){
         $ctrl.user = res.data.data;
+
     	var originalId = $stateParams.id;
+
         $ctrl.showHideAddCommentBlock = false;
-    	$http.post('/api/contact/item', {'_id': $stateParams.id, 'userId': $ctrl.user._id }).then(function(res){
+
+    	$http.post(baseUrl + '/api/contact/item', {'_id': $stateParams.id, 'userId': $ctrl.user._id }).then(function(res){
             
             if (res.data.contact.verifyContact){
                 $ctrl.contactVerifyed = true;
@@ -16,10 +21,11 @@ angular.module('starter')
             	$ctrl.contact = res.data.contact;
             }
             $ctrl.verifyContacts = res.data.hypothesis;
-            $http.post('/api/contact/commentsList', {id:$ctrl.contact._id}).then(function(res){
+            $http.post( baseUrl + '/api/contact/commentsList', {id:$ctrl.contact._id}).then(function(res){
                 $ctrl.comments = res.data;
+                console.log($ctrl.comments)
             })
-            $http.post('/api/contact/raitingList', {id:$ctrl.contact._id}).then(function(res){
+            $http.post(baseUrl + '/api/contact/raitingList', {id:$ctrl.contact._id}).then(function(res){
                 $ctrl.raitingList = res.data;
                 var totalRaiting = 0;
                 $ctrl.raitingList.forEach(function(raiting){
@@ -38,7 +44,7 @@ angular.module('starter')
         });
 
         $ctrl.replaceWithVerify = function(id){
-        	$http.post('/api/contact/verifyContact', {'id': originalId,'verifyId': id, 'userId' : $ctrl.user._id}).then(function(res){
+        	$http.post(baseUrl + '/api/contact/verifyContact', {'id': originalId,'verifyId': id, 'userId' : $ctrl.user._id}).then(function(res){
         		console.log('!')
         	})
         };
@@ -47,7 +53,7 @@ angular.module('starter')
             $ctrl.comment.contactId = $ctrl.contact._id;
             $ctrl.comment.userId = $ctrl.user._id;
             $ctrl.comment.date = new Date();
-            $http.post('/api/contact/addComment', $ctrl.comment).then(function(res){
+            $http.post( baseUrl + '/api/contact/addComment', $ctrl.comment).then(function(res){
 
             })
         }
@@ -56,7 +62,7 @@ angular.module('starter')
             $ctrl.newRaiting.contactId = $ctrl.contact._id;
             $ctrl.newRaiting.userId = $ctrl.user._id;
             $ctrl.newRaiting.date = new Date();
-            $http.post('/api/contact/addRaiting', $ctrl.newRaiting).then(function(res){
+            $http.post(baseUrl + '/api/contact/addRaiting', $ctrl.newRaiting).then(function(res){
 
             })
         }
@@ -73,7 +79,7 @@ angular.module('starter')
                         "author" : $ctrl.user._id
                     }
                 }
-                $http.post('/api/messages/addMessage', message).then(function(res){
+                $http.post(baseUrl + '/api/messages/addMessage', message).then(function(res){
 
                 });
             }, function () {

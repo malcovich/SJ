@@ -1,77 +1,71 @@
-<div class="contact-right-block" ng-hide="$ctrl.contactVerifyed">
-	<div ng-repeat="verifyContact in $ctrl.verifyContacts">
-		<p>{{verifyContact.name}}</p>
-		<span ng-click="$ctrl.replaceWithVerify(verifyContact._id)">Заменить</span>
+<ion-modal-view view-title="">
+    <ion-content class="has-header">
+	<div class="contact-page">
+		<div class="img-block">
+			<img ng-src="{{$ctrl.baseUrl}}/{{$ctrl.contact.img}}">
+		</div>
+		<div class="info-block">
+			<h3>{{$ctrl.contact.name}}</h3>
+			<p class="contact-spec">{{$ctrl.contact.spec}}</p>
+			<div class="addToContact">Добавить</div>
+		</div>
+		<div class="tab-block">
+			<div class="tab-header">
+				<div class="item-header" ng-click="$ctrl.activeTab = 'More'" ng-class="{active: $ctrl.activeTab == 'More'}">Детально</div>
+				<div class="item-header" ng-click="$ctrl.activeTab = 'Otz'" ng-class="{active: $ctrl.activeTab == 'Otz'}">Отзывы</div>
+			</div>
+			<div class="tab-pane" ng-show="$ctrl.activeTab == 'More'">
+				<p class="field-row">
+					<span class="user-field">{{$ctrl.contact.phone}}</span>
+					<span class="field-title">Телефон</span>
+				</p>
+			</div>
+			<div class="tab-pane" ng-show="$ctrl.activeTab == 'Otz'">
+				<div ng-repeat="comment in $ctrl.comments" class="comment-block">
+					<div class="comment-header">
+						<span class="comment-date">{{comment.date | date}}</span>
+						<div class="comment-autor-img">
+							<img ng-src="{{$ctrl.baseUrl}}/{{comment.userId.img}}">
+						</div>
+						<p class="comment-autor-name">{{comment.userId.name}}</p>
+					</div>
+					<p>{{comment.text}}</p>
+			</div>
+
+		</div>
 	</div>
-</div>
-<div class="contact-left-block">
-	<div class="inner-block">
-		<div class="contact-information">
-			<div class="other-info">
-				<span class="contact-raiting" style="color:{{$ctrl.rColor}}">{{$ctrl.raiting}}/5</span>
-				<p class="raiting-description">оценка <b>{{$ctrl.raitingList.length}}</b> пользователей</p>
-				<div class="raiting-description" >Ваша оценка: <b style="color:{{$ctrl.rColor}}" class="your-raiting" ng-show="$ctrl.yourRaiting">{{$ctrl.yourRaiting}}</b><p ng-hide="$ctrl.yourRaiting" style="display: inline-block;"><input type="number" class="raiting-input" ng-model="$ctrl.newRaiting.raiting"><span class="btn green-btn" ng-click="$ctrl.saveRaiting()">Ok</span></p></div>
-			</div>
-			<div class="contact-photo">
-				<img src="public/images/3.jpg">	
-			</div>
-			<div class="contact-text-info">
+    </ion-content>
+</ion-modal-view>
+
+
+
+
+<!-- <div class="other-info">
+	<span class="contact-raiting" style="color:{{$ctrl.rColor}}">{{$ctrl.raiting}}/5</span>
+	<p class="raiting-description">оценка <b>{{$ctrl.raitingList.length}}</b> пользователей</p>
+	<div class="raiting-description" >Ваша оценка: <b style="color:{{$ctrl.rColor}}" class="your-raiting" ng-show="$ctrl.yourRaiting">{{$ctrl.yourRaiting}}</b><p ng-hide="$ctrl.yourRaiting" style="display: inline-block;"><input type="number" class="raiting-input" ng-model="$ctrl.newRaiting.raiting"><span class="btn green-btn" ng-click="$ctrl.saveRaiting()">Ok</span></p></div>
+</div> 
+ -->
+
+
+
+
+<!-- 
 				<h1>{{$ctrl.contact.name}}</h1>
 				<p class="contact-spesalition">{{$ctrl.contact.spec}}</p>
-				<div class="contact-phone">
 					<p >тел: {{$ctrl.contact.phone}}</p>
-				</div>
-				<div class="buttons-block">
-					<span class="btn green-btn" ng-click="$ctrl.opentMessageModal()"> Написать сообщение</span>
-				</div>
-			</div>
-		</div>
 
-		<div class="tab-block">
-			<uib-tabset active="active" class="request-tabs">
-				<uib-tab index="0" heading="Описание">
-					<h4 class="sorry-text">К сожалению, данный контакт еще не зарегистривованный в нашем сервисе.<br> <span>Пригласите его</span>, что бы он смог заполнить этот раздел!</h4>
-				</uib-tab>
-				<uib-tab index="1" heading="Отзывы пользователей">
-					<div>
-						<div class="comments-header">
 							<span class="showHideAddCommentBlock" ng-click="$ctrl.showHideAddCommentBlock = !$ctrl.showHideAddCommentBlock">Добавить отзыв</span>
 							<h4>{{ $ctrl.comments.length}} отзыва</h4>							
-						</div>	
 						<div class="comment-block" ng-show="$ctrl.showHideAddCommentBlock">
 							<textarea class="text-area" ng-model="$ctrl.comment.text"></textarea>
 							<span class="btn green-btn" ng-click="$ctrl.addComment()">Add</span>
 						</div>
 
 						<div class="comment-item" ng-repeat="comment in $ctrl.comments">
-							<div class="comment-user">
-								<div class="image-user">
-									<img src="public/images/user.jpg" alt="">
-								</div>
-								<div class="comment-info">
 									<a class="comment-user-name">{{comment.userId.name}}</a>
 									<span class="comment-date">{{comment.date | date}}</span>
-								</div>
-							</div>
 							<div class="comment-text">
 								<p>{{comment.text}}</p>
-							</div>
-						</div>
-					</div>
-				</uib-tab>
-			</uib-tabset>
-		</div>
-	</div>
-</div>
 
-<script type="text/ng-template" id="myModalContent.html">
-    <div class="modal-body" id="modal-body">
-    	<p>Сообщение:</p>
-      <textarea class="text-area" ng-model="vm.text"></textarea>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
-    </div>
-</script>
-
+ -->
