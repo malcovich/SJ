@@ -1,0 +1,16 @@
+<ion-view view-title="Категории">
+  	<ion-content>
+		<div class="list-categories">
+			<div ng-repeat="category in $ctrl.categories" ui-sref="app.category({id:category._id})" class="category">
+				<div class="category-img-block">
+					<img ng-src="{{$ctrl.baseUrl}}/public/images/{{category.img}}" alt="">
+				</div>
+				<div class="category-info">
+					<h3>
+						{{category.title}}
+					</h3>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

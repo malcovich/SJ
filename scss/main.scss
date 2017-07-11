@@ -12,8 +12,9 @@ body {
  }
 
 .platform-android .bar .title {
-	font-size: 3.7vw;
-	line-height:  80px;
+	font-size: 18px;
+	line-height: 53px;
+	height: 53px;
 	color: #fff;
 	text-align: center;
 	font-weight: normal;
@@ -24,7 +25,7 @@ body {
 
 } 
 .has-header {
-	top: 40px;
+	top: 53px;
 }
 .bar-stable .button.button-clear{
 	color: #fff;
@@ -63,9 +64,7 @@ body {
 .menu .has-header {
 	top: 150px;
 }
-.has-header {
-	top: 40px;
-}
+
 .user-avatar {
 	width: 100px;
 	margin: 5px 88px 10px 88px;
@@ -81,4 +80,21 @@ body {
 	text-align:center;
 	color: #fff;
 	font-size: 18px;
+}
+.no-news{
+	margin-top: 40vh;
+	color: #C7C7C7;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+}
+.serch-block {
+	background-color: #454553;
+	padding: 0 10px 10px 10px;
+	// margin-top:51px;
+	input {
+		width: 100%;
+		padding: 0 10px;
+		line-height: 34px;
+	}
 }

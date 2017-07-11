@@ -22,8 +22,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ngStorage', 'ngCordov
 })
 
 /*.constant('baseUrl', "https://salty-hamlet-53492.herokuapp.com")*/
-// .constant('baseUrl', "http://172.18.2.117:5000")
-.constant('baseUrl', "http://192.168.1.107:5000")
+.constant('baseUrl', "http://172.18.2.117:5000")
+// .constant('baseUrl', "http://192.168.1.107:5000")
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider, $ionicConfigProvider) {
   $stateProvider
@@ -74,12 +74,32 @@ angular.module('starter', ['ionic', 'starter.controllers','ngStorage', 'ngCordov
         }
       }
     })
-   .state('app.contacts', {
-      url: '/contacts',
+   .state('app.categories', {
+      url: '/categories',
       views: {
         'menuContent': {
-          templateUrl: 'js/contacts/list.html',
-          controller: 'ContactsListController',
+          templateUrl: 'js/category/list.html',
+          controller: 'CategoryListController',
+          controllerAs: '$ctrl'
+        }
+      }
+    })
+    .state('app.category', {
+      url: '/categories/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/category/item.html',
+          controller: 'CategoryController',
+          controllerAs: '$ctrl'
+        }
+      }
+    })
+   .state('app.contact', {
+      url: '/contact/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/contacts/contact-details.html',
+          controller: 'ContactDetailsController',
           controllerAs: '$ctrl'
         }
       }
@@ -116,16 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngStorage', 'ngCordov
         }
       }
     })
-   .state('app.contact', {
-      url: '/contact/:id',
-      views: {
-        'menuContent': {
-          templateUrl: 'js/contacts/contact-details.html',
-          controller: 'ContactDetailsController',
-          controllerAs: '$ctrl'
-        }
-      }
-    })
+   
    .state('app.friend', {
       url: '/friend/:id',
       views: {

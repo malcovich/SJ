@@ -1,20 +1,25 @@
 <ion-modal-view>
   <ion-content>
-  main
-  sdfsdf
-  sdf
-  sdf
-  sdf
-  sdf
-  s
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  sdfsdf
-  !!!!!1
+    <div class="serch-block" >
+      <input type="text" placeholder="Поиск по специалистам и пользователям">
+    </div>
+
+    <div class="no-news" ng-hide="$ctrl.listRequest.length > 0">
+      У вас нет новых уведомлений
+    </div>
+
+    <ul class="friendsList" ng-show="$ctrl.listRequest.length > 0">
+      <li class="friendItem" ng-repeat="friend in $ctrl.listRequest">
+        <div class="add-to-friend">
+          <i class="icon ion-plus-round" ng-click="$ctrl.accept(friend._id)"></i>
+        </div>
+        <div class="friend-avatar">
+          <img ng-src="{{baseUrl}}/{{friend.useridinvite.img}}">
+        </div>
+        <div class="friend-info">
+          <h3>{{friend.useridinvite.name || friend.useridinvite.email}}</h3>
+        </div>
+      </li>
+    </ul>
   </ion-content>
 </ion-modal-view>
