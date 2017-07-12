@@ -41,18 +41,16 @@ angular.module('starter')
     		$ctrl.request.userId = $ctrl.user._id;
     		$ctrl.request.requestDate = new Date();
     		$http.post(baseUrl + '/api/requests/add', $ctrl.request).then(function(res){
-  	      	$ctrl.requestsList.push(res)
+  	      	$ctrl.requestsList.push(res);
   	    });
     	}
 
     	$ctrl.openModalfromNet = function (size) {
-        console.log('!',$ctrl.allContatcts)
         $ionicModal.fromTemplateUrl('js/requests/selectFromNet.html', {
           scope: $scope
         }).then(function(modal) {
           $ctrl.modal = modal;
           $ctrl.modal.show();
-
         });
 
        

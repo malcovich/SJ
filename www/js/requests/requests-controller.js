@@ -2,6 +2,7 @@ angular.module('starter')
   .controller('RequestsListController', ['$scope', 'AuthFactory', '$http', '$stateParams','$state','$ionicModal','baseUrl',  function($scope, AuthFactory, $http, $stateParams, $state,  $ionicModal, baseUrl ){
   	var $ctrl = this;
     console.log('req', $state)
+    $ctrl.activeTab = 1
     // var baseUrl = "https://salty-hamlet-53492.herokuapp.com";
     AuthFactory.me().then(function(res){
       $ctrl.user = res.data.data;
@@ -35,7 +36,8 @@ angular.module('starter')
     		$ctrl.request.userId = $ctrl.user._id;
     		$ctrl.request.requestDate = new Date();
     		$http.post(baseUrl + '/api/requests/add', $ctrl.request).then(function(res){
-  	      	$ctrl.requestsList.push(res)
+  	      	$ctrl.requestsList.push(res.data);
+            $ctrl.modal.hide();
   	    });
     	};
 

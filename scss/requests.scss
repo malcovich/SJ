@@ -1,4 +1,86 @@
-.my-request{
+.tabs-requests {
+	.tab-header{
+		overflow: hidden;
+		position: fixed;
+		top: calc(100vh - 90px);
+		width: 100%;
+		left:0;
+		.header-item{
+			float: left;
+			width: 50%;
+			text-align: center;
+		}
+	}
+	.tab-panel{
+		height: 100vh;
+		padding: 25px;
+		.request-list-title{
+			font-size: 18px;
+		    font-weight: normal;
+		    color: #666666;
+		    line-height: 21px;
+		    margin-top: 11px;
+		    margin-bottom: 25px;
+		}
+		.my-request{
+			border-bottom: 1px solid #f3f3f3;
+			padding: 15px 0;
+			overflow: hidden;
+			h3 {
+				font-size: 16px;
+			    font-weight: normal;
+			    color: #666666;
+			}
+			.answers-request{
+				float: right;
+			}
+			.date-request{
+				float: left;
+			}
+			.req-info {
+				overflow: hidden;
+				.req-user-img{
+					float: right;
+					width: 40px;
+					height: 40px;
+					overflow: hidden;
+					border-radius: 50%;
+					margin-right: 10px;
+					img {
+						width: 100%;
+					}
+				}
+				.req-autor{
+					float: right;
+					line-height: 40px;
+				}
+				.date-request, .answers-request {
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}
+.contact-card{
+	padding: 25px 0;
+	background:#fbfaff;
+}
+.modal-wrapper{
+	background: #fff;
+	padding: 25px;
+	height: 100vh;
+	.item-selected {
+		input {
+			float: left;
+			margin-right: 20px;
+		}
+		p {
+			float: left;
+		}
+	}
+	
+}
+/* .my-request{
 	padding: 3.75vw;
 	border-bottom: 2px solid #f3f3f3;
 	overflow:hidden;
@@ -37,7 +119,7 @@
 			color:#292a46;
 		}
 	}
-}
+} */
 .tabs-striped .tabs {
 	height: 15.7vw;
 	padding-top:0;
