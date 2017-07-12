@@ -1,6 +1,6 @@
 <ion-view view-title="Друзья">
   <ion-content>
-	<div class="inner-block">
+	<div class="inner-block" class="has-header">
 	    <div  ng-repeat="friend in $ctrl.friendsList" ui-sref="app.friend({id : friend._id})" class="friend-item">
 	   	<div class="friend-avatar">
 		  <img ng-src="{{$ctrl.baseUrl}}/{{friend.img}}">
