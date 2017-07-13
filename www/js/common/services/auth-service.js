@@ -1,4 +1,4 @@
-angular.module('starter').factory('AuthFactory', function($http, $localStorage, $state, baseUrl){
+angular.module('starter').factory('AuthFactory', function($http, $localStorage, $state, baseUrl, $window, $ionicHistory){
     var service = {};
     function changeUser(user) {
         angular.extend(currentUser, user);
@@ -46,8 +46,9 @@ angular.module('starter').factory('AuthFactory', function($http, $localStorage, 
         return $http.get(baseUrl + '/api/me/')
     },
     service.logout =  function(success) {
-        changeUser({});
-        delete $localStorage.token;
+        $window.localStorage.clear();
+        $ionicHistory.clearCache();
+        $ionicHistory.clearHistory();
     }
     return service;
 });

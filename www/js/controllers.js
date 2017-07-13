@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
       };
     };
     var pickContact = function() {
+      console.log('navigator', navigator.contacts)
       var deferred = $q.defer();
       if(navigator && navigator.contacts) {
           navigator.contacts.find(function(contact){
@@ -23,7 +24,7 @@ angular.module('starter.controllers', [])
       pickContact : pickContact
     };
   }])
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $localStorage,AuthFactory, $state, $cordovaContacts, $ionicPlatform,ContactsService) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $localStorage,AuthFactory, $state, $cordovaContacts, $ionicPlatform,ContactsService, $ionicHistory ) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -86,8 +87,10 @@ angular.module('starter.controllers', [])
   };
 
   $scope.logOut = function() {
-    AuthFactory.logout()
-    $state.go('login');
+    $ionicHistory.clearCache().then(function(){
+      AuthFactory.logout()
+      $state.go('login');
+    })
   };
 
   // Perform the login action when the user submits the login form

@@ -1,0 +1,22 @@
+<div class="new-contact">
+  <div class="modal-header">
+      <h3 class="modal-title" id="modal-title">Add new contact</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+      <input type="text" ng-model="$ctrl.newContact.name" placeholder="Name">
+      <input type="text" ng-model="$ctrl.newContact.phone" placeholder="Phone">
+      <select ng-options="category as category.title for category in $ctrl.listCategories " ng-model="$ctrl.selected"></select>
+      <input type="text" ng-model="$ctrl.newContact.spec" placeholder="Specification">
+       <div class="checkbox">
+        <label class="radio-label">
+          <input ng-model="$ctrl.newContact.hidden" type="checkbox">Hidden
+        </label>
+      </div>  
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="$ctrl.saveNewContact()">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+  </div>
+
+   <button class="btn btn-primary" type="button" ng-click="$ctrl.selectFromPhone()">Select</button>
+</div>

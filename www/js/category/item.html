@@ -1,6 +1,8 @@
 <ion-view view-title="{{$ctrl.category.category.title}}">
+  <ion-nav-buttons side="right">
+    <i class="icon ion-plus-round add-new-request" ng-click="$ctrl.showModal()"></i>
+  </ion-nav-buttons>
   <ion-content>
-
     <div class="category-contacts-list">
       <div ng-repeat="contact in $ctrl.category.contacts" class="contact-item" ui-sref="app.contact({id:contact._id})"> 
         <div class="contact-item-img">

@@ -174,6 +174,61 @@ $dark:                            #444 !default;
         margin-top: 80px;
         text-align: center; }
 
+.phoneContacts .friendsList .friendItem {
+  overflow: hidden;
+  padding: 17px 0;
+  border-bottom: 1px solid #C7C7C7; }
+  .phoneContacts .friendsList .friendItem .friend-avatar {
+    float: left;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 25px; }
+    .phoneContacts .friendsList .friendItem .friend-avatar img {
+      width: 100%; }
+  .phoneContacts .friendsList .friendItem .add-to-friend {
+    float: right;
+    width: 40px;
+    text-align: center;
+    margin-top: 23px; }
+    .phoneContacts .friendsList .friendItem .add-to-friend i {
+      font-size: 30px;
+      color: #4990E2; }
+      .phoneContacts .friendsList .friendItem .add-to-friend i.red-color {
+        color: red;
+        font-size: 20px; }
+  .phoneContacts .friendsList .friendItem .friend-info {
+    margin-right: 40px;
+    margin-left: 100px;
+    float: none; }
+    .phoneContacts .friendsList .friendItem .friend-info h3 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #666666;
+      line-height: 21px;
+      margin-top: 11px;
+      margin-bottom: 5px; }
+    .phoneContacts .friendsList .friendItem .friend-info .friendPhone {
+      font-size: 14px;
+      color: #6D747F;
+      margin-bottom: 0; }
+
+.new-contact h2 {
+  font-size: 21px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: #6D747F;
+  margin: 20px 0 30px 0; }
+
+.new-contact input[type="text"] {
+  border-bottom: 1px solid #CBCBCB;
+  height: 50px;
+  width: 100%; }
+  .new-contact input[type="text"]::placeholder {
+    color: #BABFC8; }
+
 .contact-item {
   padding: 17px 25px;
   overflow: hidden;
@@ -234,11 +289,14 @@ $dark:                            #444 !default;
     margin-top: 28px;
     margin-bottom: 35px; }
 
-.tab-block .tab-header {
+.contact-page .tab-block .tab-header {
+  position: relative;
+  top: 0;
   overflow: hidden;
+  height: auto;
   border-top: 1px solid #A2A2A2;
   border-bottom: 1px solid #A2A2A2; }
-  .tab-block .tab-header .item-header {
+  .contact-page .tab-block .tab-header .item-header {
     float: left;
     width: 50%;
     color: #A2A2A2;
@@ -246,41 +304,41 @@ $dark:                            #444 !default;
     font-size: 14px;
     line-height: 50px;
     text-transform: uppercase; }
-    .tab-block .tab-header .item-header.active {
+    .contact-page .tab-block .tab-header .item-header.active {
       color: #3498DB; }
 
-.tab-block .tab-pane .field-row {
+.contact-page .tab-block .tab-pane .field-row {
   padding: 8px 16px;
   overflow: hidden; }
 
-.tab-block .tab-pane .field-title {
+.contact-page .tab-block .tab-pane .field-title {
   float: left;
   color: #919191;
   font-size: 14px; }
 
-.tab-block .tab-pane .user-field {
+.contact-page .tab-block .tab-pane .user-field {
   float: right;
   color: #919191;
   font-size: 14px; }
 
-.tab-block .tab-pane .comment-block {
+.contact-page .tab-block .tab-pane .comment-block {
   padding: 5px 25px; }
-  .tab-block .tab-pane .comment-block .comment-header {
+  .contact-page .tab-block .tab-pane .comment-block .comment-header {
     overflow: hidden; }
-  .tab-block .tab-pane .comment-block .comment-autor-img {
+  .contact-page .tab-block .tab-pane .comment-block .comment-autor-img {
     height: 35px;
     width: 35px;
     margin-right: 10px;
     border-radius: 50%;
     overflow: hidden;
     float: left; }
-    .tab-block .tab-pane .comment-block .comment-autor-img img {
+    .contact-page .tab-block .tab-pane .comment-block .comment-autor-img img {
       width: 100%; }
-  .tab-block .tab-pane .comment-block .comment-autor-name {
+  .contact-page .tab-block .tab-pane .comment-block .comment-autor-name {
     float: left;
     line-height: 35px;
     color: #3498DB; }
-  .tab-block .tab-pane .comment-block .comment-date {
+  .contact-page .tab-block .tab-pane .comment-block .comment-date {
     float: right;
     line-height: 35px;
     font-size: 14px;
@@ -628,15 +686,19 @@ body {
     .inner-profile .field-row:first-child {
       border-top: 1px solid #E6E9ED; }
 
-.tabs-requests .tab-header {
+.tab-header {
   overflow: hidden;
   position: fixed;
-  top: calc(100vh - 90px);
+  top: calc(100vh - 40px);
   width: 100%;
-  left: 0; }
-  .tabs-requests .tab-header .header-item {
+  left: 0;
+  background: #fff;
+  height: 40px; }
+  .tab-header .header-item {
     float: left;
     width: 50%;
+    height: 40px;
+    line-height: 40px;
     text-align: center; }
 
 .tabs-requests .tab-panel {

@@ -1,0 +1,18 @@
+<ion-content>
+	<div class="phoneContacts">
+		<ul class="friendsList">
+	  		<li class="friendItem" ng-repeat="friend in $ctrl.listPhoneContacts"">
+	  			<div class="add-to-friend">
+	  				<i class="icon ion-plus-round"  ng-click="$ctrl.selectToModal(friend)"></i>
+	  			</div>
+	  			<div class="friend-avatar">
+				 	<img ng-src="{{baseUrl}}/{{friend.img}}">
+			   	</div>
+			   	<div class="friend-info">
+				    <h3>{{friend.displayName}}</h3>
+				    <p class="friendPhone">{{friend.phone}}</p>
+				</div>
+	  		</li>
+	  	</ul>
+	</div>
+</ion-content>
