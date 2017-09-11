@@ -1,40 +1,59 @@
-<ion-view view-title="Requests">
+<ion-view view-title="Рекомендації">
  	<ion-nav-buttons side="right">
 	   <i class="icon ion-plus-round add-new-request" ng-click="$ctrl.showModal()"></i>
    	</ion-nav-buttons>
   	<ion-content>
 	  	<div class="tabs-requests" ion-fixed>
-	  		
 	  		<div class="tab-panel" ng-show="$ctrl.activeTab == 1">
-	  			<h2 class="request-list-title">Вы ищете:</h2>
 				<div ng-repeat="req in $ctrl.requestsList" class="my-request">
-					<h3 ui-sref="app.request({reqId: req._id})">{{req.text}}</h3>
+					<div class="request-inner">
+							<div class="request-autor-img">
+								<img ng-src="http://172.18.2.117:5000/{{req.userId.smallImg}}" alt="">
+							</div>
+						<div class="request-body"  ui-sref="app.request({reqId: req._id})">
+							<p>{{req.text}}</p>
+							<h4 class="request-autor-name" ui-sref="main.friend({id:req.userId._id })">{{req.userId.name}}</h4> 
+							<div class="request-date">{{req.requestDate | date}}</div>
+						</div>
+					</div>
+					<!-- <h3 ui-sref="app.request({reqId: req._id})">{{req.text}}</h3>
 					<span class="answers-request"><i class="icon ion-chatbox"></i> 0 ответов</span>
-					<span class="date-request"><i class="icon ion-calendar"></i> {{req.requestDate | date}}</span>
+					<span class="date-request"><i class="icon ion-calendar"></i> {{req.requestDate | date}}</span> -->
 					<!-- <span ng-click="$ctrl.deleteRequest(req._id)">delete</span>
 					<span ng-click="$ctrl.change(req)">Редактировать</span> -->
 				</div>
 	  		</div>
 	  		<div class="tab-panel" ng-show="$ctrl.activeTab == 2">
 	  			<div ng-repeat="req in $ctrl.friendsRequestsList" class="my-request">
-					<h3 ui-sref="app.request({reqId: req._id})">{{req.text}}</h3>
+					<!-- <h3 ui-sref="app.request({reqId: req._id})">{{req.text}}</h3>
 					<div class="req-info">
 						<span class="req-autor"> 
-		        			{{req.userId.name}}
+							        			{{req.userId.name}}
 						</span>
 						<div class="req-user-img">
-		        			<img ng-src="http://172.18.2.117:5000/{{req.userId.img}}">
-		        		</div>
-		        		
+							        			<img ng-src="http://172.18.2.117:5000/{{req.userId.img}}">
+							        		</div>
+							        		
 						<span class="date-request"><i class="icon ion-calendar"></i> {{req.requestDate | date}}</span>
+					</div> -->
+
+					<div class="request-inner">
+							<div class="request-autor-img">
+								<img ng-src="http://172.18.2.117:5000/{{req.userId.smallImg}}" alt="">
+							</div>
+						<div class="request-body"  ui-sref="app.request({reqId: req._id})">
+							<p>{{req.text}}</p>
+							<h4 class="request-autor-name" ui-sref="main.friend({id:req.userId._id })">{{req.userId.name}}</h4> 
+							<div class="request-date">{{req.requestDate | date}}</div>
+						</div>
 					</div>
 				</div>
 	  		</div>
 	  	</div>
  	</ion-content>
  	<div class="tab-header">
-		<div class="header-item" ng-click="$ctrl.activeTab = 1" ng-class="{active: $ctrl.activeTab == 1}">Для меня</div>
-		<div class="header-item" ng-click="$ctrl.activeTab = 2" ng-class="{active: $ctrl.activeTab == 2}">Для друзей</div>
+		<div class="header-item" ng-click="$ctrl.activeTab = 1" ng-class="{active: $ctrl.activeTab == 1}">Для мене</div>
+		<div class="header-item" ng-click="$ctrl.activeTab = 2" ng-class="{active: $ctrl.activeTab == 2}">Для друзів</div>
 	</div>
 </ion-view>
 

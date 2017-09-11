@@ -1,5 +1,5 @@
     <div class="modal-header">
-        <h3 class="modal-title select-contatcts-title" id="modal-title">Выбирете контакты</h3>
+        <h3 class="modal-title select-contatcts-title" id="modal-title">Виберіть спеціалістів</h3>
     </div>
     <div class="modal-body" id="modal-body">        
       <div >
@@ -13,10 +13,20 @@
               </ul>
           </div>
       </uib-accordion> -->
-          <div ng-repeat="item in $ctrl.allContatcts" class="item-selected">
-                  <input type="checkbox" ng-model="item.selected">
-                      <p>{{item.name}}<span class="item-selected-spec">{{item.spec}}</span></p>
-          </div>
+        <div class="row justify-content-between mb-4" ng-repeat="item in $ctrl.allContatcts">
+          <div class="col align-self-center">
+          <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-13 g-pl-25 mb-0" >
+            <input class="hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" ng-model="item.selected">
+            <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
+              <i class="fa" data-check-icon="&#xf00c"></i>
+            </div>
+           {{item.name}}
+          </label>
+        </div>
+        <!--   <div ng-repeat="item in $ctrl.allContatcts" class="item-selected">
+                <input type="checkbox" ng-model="item.selected">
+                    <p>{{item.name}}<span class="item-selected-spec">{{item.spec}}</span></p>
+        </div> -->
       </div>
     </div>
     <div class="modal-footer">

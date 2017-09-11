@@ -17,7 +17,7 @@
      <!--  <h1 class="title">Profee</h1> -->
       <div>
         <div class="user-avatar">
-          <img ng-src="http://172.18.2.117:3000/{{user.img}}" alt="">\
+          <img ng-src="http://172.18.2.117:5000/{{user.smallImg}}" alt="">\
         </div>
         <p class="user-name">{{user.name || user.email}}</p>
       </div>
@@ -26,22 +26,22 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close ui-sref="app.main">
-          Новости
+          Сповіщення
         </ion-item>
         <ion-item menu-close ui-sref="app.requests">
-          Запросы
+          Рекомендації
         </ion-item>
         <ion-item menu-close href="#/app/friends">
-          Друзья
+          Друзі
         </ion-item>
         <ion-item menu-close href="#/app/categories">
-          Контакты
+          Спеціалісти
         </ion-item>
         <ion-item menu-close href="#/app/profile">
-          Профиль
+          Профіль
         </ion-item>
-         <ion-item menu-close ng-click="logOut()">
-          log out
+         <ion-item menu-close  href="" ng-click="logOut()">
+          Вийти
         </ion-item>
       </ion-list>
     </ion-content>

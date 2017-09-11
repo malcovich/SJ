@@ -45,6 +45,8 @@ angular.module('starter')
   	    });
     	}
 
+
+
     	$ctrl.openModalfromNet = function (size) {
         $ionicModal.fromTemplateUrl('js/requests/selectFromNet.html', {
           scope: $scope
@@ -53,6 +55,7 @@ angular.module('starter')
           $ctrl.modal.show();
         });
 
+      
        
       };
        $ctrl.saveAnswer = function(){

@@ -1,9 +1,11 @@
-<h4>Add new request</h4>
+<div class="modal-body">
+	<h4>Запитайте рекомендацію у друзів</h4>
 
-<div class="form-block">
-	<form>
-		<textarea ng-model="$ctrl.request.text" class="text-area"></textarea>
-		<button ng-click="$ctrl.save()" class="btn green-btn">Отменить</button>
-		<button ng-click="$ctrl.save()" class="btn green-btn">Отправить</button>
-	</form>
+	<div class="form-block">
+		<form>
+			<textarea ng-model="$ctrl.request.text" class="text-area-req"></textarea>
+			<span class="btn btn-md u-btn-outline-bluegray g-mr-10 g-mb-15 " ng-click="$ctrl.hideModal()">Відмінити</span>
+			<span class="btn btn-md u-btn-primary  g-mb-15 pull-right" ng-click="$ctrl.save()">Відправити</span>
+		</form>
+	</div>
 </div>

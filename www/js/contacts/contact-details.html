@@ -7,7 +7,12 @@
 		<div class="info-block">
 			<h3>{{$ctrl.contact.name}}</h3>
 			<p class="contact-spec">{{$ctrl.contact.spec}}</p>
-			<div class="addToContact">Добавить</div>
+			<div class="listHasContact" ng-show=" $ctrl.friendHasContact.length > 0">
+				<p>Ваши друзья также добавили этого специлиста</p>
+				<div ng-repeat="f in $ctrl.friendHasContact" class="hasContactImg"><img ng-src="{{ $ctrl.baseUrl}}/{{f.img}}" alt=""></div>
+			</div>
+			<div class="addToContact" ng-hide="$ctrl.contact.userId.indexOf($ctrl.user._id) > -1" ng-click="$ctrl.addToContacts()">Добавить</div>
+			<div class="addToContact" ng-hide="$ctrl.contact.userId.indexOf($ctrl.user._id) == -1"  ng-click="$ctrl.deleteFromContacts()">Удалить</div>
 		</div>
 		<div class="tab-block">
 			<div class="tab-header">
@@ -21,6 +26,11 @@
 				</p>
 			</div>
 			<div class="tab-pane" ng-show="$ctrl.activeTab == 'Otz'">
+				<div class="" ng-click='$ctrl.showHideAddCommentBlock = !$ctrl.showHideAddCommentBlock'>Оставить отзыв</div>
+				<div class="comment-block" ng-show="$ctrl.showHideAddCommentBlock">
+					<textarea class="text-area" ng-model="$ctrl.comment.text"></textarea>
+					<span class="btn green-btn" ng-click="$ctrl.addComment()">Add</span>
+				</div>
 				<div ng-repeat="comment in $ctrl.comments" class="comment-block">
 					<div class="comment-header">
 						<span class="comment-date">{{comment.date | date}}</span>

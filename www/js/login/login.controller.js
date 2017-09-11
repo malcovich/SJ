@@ -12,7 +12,7 @@ angular.module('starter')
           AuthFactory.me().then(function(user){
             $scope.user = user.data.data;
             if($scope.user.hardNumber == true){
-              $state.go("app.main");    
+              $state.go("app.main"); 
             }else {
               $state.go("hardnumber"); 
             }

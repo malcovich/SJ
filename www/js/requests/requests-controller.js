@@ -24,7 +24,6 @@ angular.module('starter')
           $ionicModal.fromTemplateUrl('js/requests/addNew.html', {
             scope: $scope
           }).then(function(modal) {
-            console.log(modal)
             $ctrl.modal = modal;
             $ctrl.modal.show();
           });
@@ -40,6 +39,10 @@ angular.module('starter')
             $ctrl.modal.hide();
   	    });
     	};
+      $ctrl.hideModal = function(){
+        console.log("@@@@@")
+        $ctrl.modal.hide();
+      }
 
     	$ctrl.deleteRequest = function(id){
     		$http.post(baseUrl + '/api/requests/deleteRequest', {'requestId': id}).then(function(res){

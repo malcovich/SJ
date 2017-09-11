@@ -3,27 +3,39 @@ angular.module('starter')
 	var $ctrl = this;
     $ctrl.baseUrl = baseUrl;
     $ctrl.activeTab = 'More';
+    $ctrl.friendHasContact = []
 
 	AuthFactory.me().then(function(res){
         $ctrl.user = res.data.data;
 
     	var originalId = $stateParams.id;
 
+        $http.post(baseUrl + '/api/friend/list', {'userId': $ctrl.user._id }).then(function(res){
+            $ctrl.friendsList = res.data;
+            $ctrl.friendsObj = $ctrl.friendsList.map(function(item){
+                if(item.useridaccept._id == $ctrl.user._id){
+                    return item.useridinvite;
+                }else {
+                    return item.useridaccept;
+                }
+            });
+
+            $ctrl.friendsObj.forEach(function(friend){
+                if ($ctrl.contact.userId.indexOf(friend._id) > -1){
+                   $ctrl.friendHasContact.push(friend)
+                }           
+            })
+            console.log( $ctrl.friendHasContact)
+        });
+
         $ctrl.showHideAddCommentBlock = false;
 
-    	$http.post(baseUrl + '/api/contact/item', {'_id': $stateParams.id, 'userId': $ctrl.user._id }).then(function(res){
-            
-            if (res.data.contact.verifyContact){
-                $ctrl.contactVerifyed = true;
-            	$ctrl.contact = res.data.contact.verifyContact
-            }
-            else {
-            	$ctrl.contact = res.data.contact;
-            }
+    	$http.post(baseUrl + '/api/contact/item', {'_id': $stateParams.id}).then(function(res){
+           
+            $ctrl.contact = res.data[0];
             $ctrl.verifyContacts = res.data.hypothesis;
             $http.post( baseUrl + '/api/contact/commentsList', {id:$ctrl.contact._id}).then(function(res){
                 $ctrl.comments = res.data;
-                console.log($ctrl.comments)
             })
             $http.post(baseUrl + '/api/contact/raitingList', {id:$ctrl.contact._id}).then(function(res){
                 $ctrl.raitingList = res.data;
@@ -67,25 +79,36 @@ angular.module('starter')
             })
         }
 
-        $ctrl.opentMessageModal = function(){
-            ModalFactory.open('myModalContent.html', 'ModalInstanceCtrl').then(function(ctrl){
-                console.log(ctrl)
-                var message = {
-                    "userId" : $ctrl.user._id,
-                    "contactId" : $ctrl.contact._id,
-                    "message" :{
-                        "text" : ctrl.text,
-                        "date" : new Date(),
-                        "author" : $ctrl.user._id
-                    }
-                }
-                $http.post(baseUrl + '/api/messages/addMessage', message).then(function(res){
-
-                });
-            }, function () {
-                  console.info('Modal dismissed at: ' + new Date());
-            });
+        $ctrl.addToContacts = function(){
+            $http.post(baseUrl + '/api/contact/addExist', {'userId': $ctrl.user._id,  'id' : originalId}).then(function(res){
+               $ctrl.contact = res.data;
+            })
         }
+        $ctrl.deleteFromContacts = function(){
+            $http.post(baseUrl + '/api/contact/deleteExist', {'userId': $ctrl.user._id, 'id' : originalId}).then(function(res){
+                $ctrl.contact = res.data;
+            })
+        }
+
+        // $ctrl.opentMessageModal = function(){
+        //     ModalFactory.open('myModalContent.html', 'ModalInstanceCtrl').then(function(ctrl){
+        //         console.log(ctrl)
+        //         var message = {
+        //             "userId" : $ctrl.user._id,
+        //             "contactId" : $ctrl.contact._id,
+        //             "message" :{
+        //                 "text" : ctrl.text,
+        //                 "date" : new Date(),
+        //                 "author" : $ctrl.user._id
+        //             }
+        //         }
+        //         $http.post(baseUrl + '/api/messages/addMessage', message).then(function(res){
+
+        //         });
+        //     }, function () {
+        //           console.info('Modal dismissed at: ' + new Date());
+        //     });
+        // }
     });
 
 }]);

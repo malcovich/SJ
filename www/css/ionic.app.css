@@ -174,6 +174,25 @@ $dark:                            #444 !default;
         margin-top: 80px;
         text-align: center; }
 
+input.filter-input {
+  margin: 25px auto;
+  width: 90%;
+  height: 34px;
+  border: 1px solid #C7C7C7; }
+
+.listHasContact {
+  overflow: hidden; }
+  .listHasContact p {
+    font-size: 11px; }
+  .listHasContact .hasContactImg {
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left; }
+    .listHasContact .hasContactImg img {
+      width: 100%; }
+
 .phoneContacts .friendsList .friendItem {
   overflow: hidden;
   padding: 17px 0;
@@ -257,6 +276,12 @@ $dark:                            #444 !default;
       font-size: 14px;
       color: #6D747F;
       margin-bottom: 0; }
+
+.contact-page .text-area {
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  border: 2px solid #3498DB; }
 
 .contact-page .img-block {
   height: 30vh;
@@ -689,21 +714,67 @@ body {
 .tab-header {
   overflow: hidden;
   position: fixed;
-  top: calc(100vh - 40px);
+  top: calc(100vh - 50px);
   width: 100%;
   left: 0;
   background: #fff;
-  height: 40px; }
+  height: 50px; }
   .tab-header .header-item {
     float: left;
     width: 50%;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     text-align: center; }
+    .tab-header .header-item.active {
+      background-color: #72c02c;
+      color: #fff; }
+
+.modal-wrapper {
+  background-color: #f7f7f7 !important; }
+  .modal-wrapper h4 {
+    padding-top: 20px !important;
+    padding-bottom: 35px;
+    font-weight: 500 !important;
+    font-size: 19px !important;
+    line-height: 30.2px !important;
+    text-transform: uppercase !important; }
+
+.text-area-req {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  resize: none;
+  height: 160px;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: .25rem;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  margin-bottom: 40px; }
+
+.add-new-request {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 21px; }
+  .add-new-request:before {
+    margin-left: 10px;
+    margin-top: 10px; }
 
 .tabs-requests .tab-panel {
-  height: 100vh;
-  padding: 25px; }
+  min-height: 100vh;
+  padding: 15px 0 50px 0;
+  background-color: #f7f7f7 !important; }
   .tabs-requests .tab-panel .request-list-title {
     font-size: 18px;
     font-weight: normal;
@@ -741,8 +812,10 @@ body {
         line-height: 40px; }
 
 .contact-card {
-  padding: 25px 0;
-  background: #fbfaff; }
+  padding: 15px 10px;
+  line-height: 20px;
+  background: #fbfaff;
+  margin-bottom: 10px; }
 
 .modal-wrapper {
   background: #fff;
@@ -815,6 +888,16 @@ body {
   font-size: 4.2vw;
   line-height: 15.7vw; }
 
+.request-autor-info h4 {
+  line-height: 27px;
+  font-weight: normal;
+  color: #555555;
+  font-size: 25px;
+  padding-left: 22vw; }
+
+.request-autor-info p {
+  padding-left: 22vw; }
+
 .request-block {
   padding: 5.5vw; }
   .request-block .request-text {
@@ -824,10 +907,11 @@ body {
     margin-bottom: 4vw;
     font-weight: 500; }
   .request-block .request-header {
-    overflow: hidden; }
+    overflow: hidden;
+    padding-bottom: 20px; }
     .request-block .request-header .req-user-img {
-      width: 10vw;
-      height: 10vw;
+      width: 17vw;
+      height: 17vw;
       border-radius: 50%;
       overflow: hidden;
       float: left;
@@ -839,8 +923,8 @@ body {
       line-height: 10vw;
       font-weight: normal;
       margin: 0;
-      color: #49a0d5;
-      font-size: 3.5vw; }
+      color: #555555;
+      font-size: 21px; }
     .request-block .request-header .request-date {
       float: right;
       line-height: 10vw; }
@@ -862,6 +946,8 @@ body {
   .request-block .request-body {
     border-top: 2px solid #f3f3f3;
     padding-top: 4vw; }
+    .request-block .request-body .h4 {
+      margin-bottom: 35px; }
     .request-block .request-body .req-answer-autor {
       font-size: 3vw;
       margin-bottom: 0;
@@ -874,22 +960,27 @@ body {
     .request-block .request-body .contact-name, .request-block .request-body .contact-spec {
       float: left;
       margin-top: 0;
-      margin-bottom: 0;
-      font-size: 3.5vw; }
+      margin-bottom: 0; }
     .request-block .request-body .contact-spec {
       margin-left: 2vw; }
     .request-block .request-body .card-title {
       overflow: hidden;
       background: #fbfaff;
-      margin-bottom: 2vw; }
-    .request-block .request-body .header-cart .image-block {
-      float: left;
-      width: 7.5vw;
-      height: 7.5vw;
-      overflow: hidden;
-      border-radius: 50%; }
-      .request-block .request-body .header-cart .image-block img {
-        max-width: 100%; }
+      margin-bottom: 0;
+      width: 100%;
+      padding: 0 10px; }
+      .request-block .request-body .card-title p {
+        margin: 0; }
+    .request-block .request-body .header-cart {
+      width: 100%; }
+      .request-block .request-body .header-cart .image-block {
+        float: left;
+        width: 7.5vw;
+        height: 7.5vw;
+        overflow: hidden;
+        border-radius: 50%; }
+        .request-block .request-body .header-cart .image-block img {
+          max-width: 100%; }
     .request-block .request-body .answer-autor {
       overflow: hidden; }
     .request-block .request-body .answer-list li {
@@ -897,3 +988,59 @@ body {
       padding: 3vw;
       border: 2px solid #f3f3f3;
       margin-bottom: 3vw; }
+
+.my-request {
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-duration: .3s;
+  flex: 0 0 calc(33% - 20px);
+  background-color: #fff;
+  border-bottom: 3px solid #eee;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer; }
+  .my-request:hover {
+    border-color: #72c02c; }
+  .my-request .request-inner {
+    padding: 20px;
+    display: flex; }
+  .my-request .request-autor-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    margin-right: 20px; }
+    .my-request .request-autor-img img {
+      max-width: 100%; }
+  .my-request .request-autor-name {
+    font-weight: 700;
+    color: #555555;
+    line-height: 19.6px;
+    font-size: 14px;
+    margin: 0; }
+  .my-request .request-date {
+    font-size: 13px;
+    color: #777777;
+    line-height: 20.8px; }
+  .my-request .request-body {
+    font-size: 17.5px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #555;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    flex: 1 1 0%;
+    -webkit-box-flex: 1; }
+    .my-request .request-body p {
+      margin-bottom: 15px;
+      min-height: 82px; }
+  .my-request .request-footer {
+    background-color: #fbfcfe;
+    border-top: 1px solid #f2f3f7;
+    padding: 10px 25px;
+    overflow: hidden; }
+    .my-request .request-footer .delete {
+      float: right;
+      color: #b4b7c6;
+      cursor: pointer; }

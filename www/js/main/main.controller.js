@@ -3,7 +3,7 @@ angular.module('starter')
     var $ctrl = this;
     $ctrl.baseUrl = baseUrl;
     AuthFactory.me().then(function(res){
-      $ctrl.user = res.data.data;
+      	$ctrl.user = res.data.data;
 		$http.post(baseUrl + '/api/friend/listFriendsRequests',{userId: $ctrl.user._id}).then(function(res,err){
 			$ctrl.listRequest = res.data;
 		})

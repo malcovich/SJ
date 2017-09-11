@@ -1,10 +1,10 @@
-<ion-view view-title="Request">
+<ion-view view-title="Рекомендація">
   <ion-content>
 <div class="inner-block">
 	<div class="request-block">
 		<div class="request-header">
             <div  class="req-user-img">
-                <img ng-src="http://172.18.2.117:5000/{{$ctrl.request.userId.img}}" alt="">
+                <img ng-src="http://172.18.2.117:5000/{{$ctrl.request.userId.smallImg}}" alt="">
             </div>
             <div class="request-autor-info">
                 <h4>{{$ctrl.request.userId.name}}</h4>
@@ -12,12 +12,12 @@
             </div>
 		</div>
 		<div class="request-body">
-            <p class="request-text">{{$ctrl.request.text}}</p>
+            <p class=" h4 g-font-weight-300">{{$ctrl.request.text}}</p>
             <div ng-hide="$ctrl.request.userId._id == $ctrl.user._id">
-                <p ng-click="$ctrl.openModalfromNet()" ng-show="$ctrl.selectedContacts.length > 0" class="edit-select-contacts">Редактировать</p>
-                <p class="titleForContacs" ng-show="$ctrl.selectedContacts.length > 0">Вы предложили:</p>
+                <p ng-click="$ctrl.openModalfromNet()" ng-show="$ctrl.selectedContacts.length > 0" class="edit-select-contacts btn btn-md u-btn-outline-primary g-mr-10 g-mb-15">Редактировать</p>
+                <p class="titleForContacs h5" ng-show="$ctrl.selectedContacts.length > 0">Ваші рекомендації:</p>
                 <div ng-hide="$ctrl.selectedContacts.length > 0" class="anser-btns">
-        			<span ng-click="$ctrl.openModalfromNet()" class="add-contact">Выбрать из сети</span>
+        			<span ng-click="$ctrl.openModalfromNet()" class="add-contact btn btn-md u-btn-outline-primary g-mr-10 g-mb-15">Порекомендувати</span>
                 </div>
                 <div>
                    
@@ -26,8 +26,8 @@
                             <li ng-repeat="contact in $ctrl.selectedContacts" class="contact-card">
                               <div class="header-card">
                                   <div class="card-title">
-                                    <h5 class="contact-name">{{contact.name}}</h5>
-                                    <p class="contact-spec">{{contact.spec}}</p>
+                                    <h5 class="contact-name h4">{{contact.name}}</h5>
+                                    <p class=" pull-right">{{contact.spec}}</p>
                                   </div>
                               </div>
                             </li>
